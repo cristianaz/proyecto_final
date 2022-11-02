@@ -34,6 +34,19 @@
                             </button>
                         </div>
                     </div>
+
+                    
+                    <div class="col-12 col-lg-12" *ngIf="error_message">
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                            <div class="alert-message">
+                               {{error_message}} 
+                            </div>
+
+                            <button type="button" (click)="close_alert()" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                    </div>
                     <div class="col-12 col-xl-12">
                         <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
                             <div class="card">
@@ -45,7 +58,7 @@
                                        <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label><b>Nombres del usuario</b></label>
-                                                <input type="text" class="form-control" #nombres="ngModel" name="nombres" [(ngModel)]="user.nombres" placeholder="Nombres completos" required>
+                                                <input type="text" class="form-control" #nombres="ngModel" name="nombres" [(ngModel)]="user.nombres" placeholder="Nombre completo" required>
                                             </div>
                                        </div>
                                        <div class="col-lg-4">

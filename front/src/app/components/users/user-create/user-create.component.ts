@@ -13,6 +13,7 @@ export class UserCreateComponent implements OnInit {
   public user;
   public success_message;
   public identity;
+  public error_message;
 
   constructor(
     private _userService : UserService,
@@ -30,11 +31,16 @@ export class UserCreateComponent implements OnInit {
     }
   }
 
+  close_alert(){
+    this.error_message = '';
+  }
   success_alert(){
     this.success_message = '';
   }
 
+  
   onSubmit(userForm){
+    console.log("test",userForm.valid)
     if(userForm.valid){
       this._userService.registrar({
         password: userForm.value.password,
@@ -55,6 +61,7 @@ export class UserCreateComponent implements OnInit {
         }
       ); 
     }
+    this.error_message = 'Complete todos los campos'; 
   }
 
 }

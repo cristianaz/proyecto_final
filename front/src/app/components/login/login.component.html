@@ -8,7 +8,7 @@
                     <div class="text-center mt-4">
                         <h1 class="h2">Iniciar Sesión</h1>
                         <p class="lead">
-                            Sistema de Ventas con Stack MEAN
+                            Sistema de Inventario Abarroteria El Socorro
                         </p>
                     </div>
 
@@ -24,13 +24,23 @@
                                             <span aria-hidden="true">x</span>
                                         </button>
                                     </div>
+
+                                    <div *ngIf="alert" class="alert alert-danger alert-dismissible" role="alert">
+                                        <div class="alert-message">
+                                            {{text_alert}}
+                                        </div>
+                                        <button type="button" (click)="close_alert()" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">x</span>
+                                        </button>
+                                    </div>
+
                                     <div class="text-center">
-                                        <img src="../../../assets/img/logo3.png" alt="Linda Miller" class="img-fluid rounded-circle" width="112" height="112" />
+                                        <img src="../../../assets/img/logo.jpg" alt="Linda Miller" class="img-fluid rounded-circle" width="112" height="112" />
                                     </div>
                                   
                                         <div class="form-group">
                                             <label>Correo Electrónico</label>
-                                            <input class="form-control form-control-lg" type="email" placeholder="Ingrese correo electrónico" #email="ngModel" name="email" [(ngModel)]="user.email" required>
+                                            <input class="form-control form-control-lg" type="email" placeholder="Ingrese correo electrónico" #email="ngModel" name="email" [(ngModel)]="user.email" [required]="true">
                                         </div>
                                         <div class="form-group">
                                             <label>Contraseña</label>

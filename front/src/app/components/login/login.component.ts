@@ -15,6 +15,8 @@ export class LoginComponent implements OnInit {
   public token;
   public identity;
   public data_error;
+  public alert: boolean = false;
+  public text_alert: string = "Completar campos requeridos";
 
   constructor(
     private _userService : UserService,
@@ -35,6 +37,13 @@ export class LoginComponent implements OnInit {
   }
 
   login(loginForm){
+    console.log("form", loginForm.valid)
+
+    if(loginForm.valid==false){
+      this.alert = true
+      console.log("alert", this.alert)
+    }
+
     if(loginForm.valid){
       
       this._userService.login(this.user).subscribe(
@@ -60,7 +69,7 @@ export class LoginComponent implements OnInit {
       );
       
     }else{
-
+     
     }
   }
 

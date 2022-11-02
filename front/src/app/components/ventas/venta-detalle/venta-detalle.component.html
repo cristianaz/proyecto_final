@@ -72,9 +72,9 @@
                                 </thead>
                                 <tbody *ngFor="let item of detalle_venta">
                                     <td class="text-center">{{item.idproducto.titulo}}</td>
-                                    <td class="text-center">${{item.idproducto.precio_venta}}</td>
+                                    <td class="text-center">Q{{item.idproducto.precio_venta}}</td>
                                     <td class="text-center">{{item.cantidad}}</td>
-                                    <td class="text-center">${{(item.idproducto.precio_venta) * (item.cantidad)}}</td>
+                                    <td class="text-center">Q{{(item.idproducto.precio_venta) * (item.cantidad)}}</td>
                                 </tbody>
                             </table>
                         </div>

@@ -1,14 +1,14 @@
 <div class="wrapper" style="height: 100%;">
     <nav id="sidebar" class="sidebar">
-        <a class="sidebar-brand" href="index.html">
+        <!-- <a class="sidebar-brand" href="index.html">
             <svg>
                 <use xlink:href="#ion-ios-pulse-strong"></use>
             </svg>
             Angular 9
-        </a>
+        </a> -->
         <div class="sidebar-content">
             <div class="sidebar-user">
-                <img src="../../../assets/img/logo3.png" class="img-fluid rounded-circle mb-2" alt="Linda Miller" />
+                <img src="../../../assets/img/logo.jpg" class="img-fluid rounded-circle mb-2"  />
                 <div class="font-weight-bold">Sistema de Inventario</div>
                
             </div>
@@ -35,11 +35,11 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item" routerLinkActive="sidebar-item active">
+                <!-- <li class="sidebar-item" routerLinkActive="sidebar-item active">
                     <a class="sidebar-link" [routerLink]="['/clientes']">
                         <i class="align-middle mr-2 fas fa-fw fa-book"></i> <span class="align-middle">Clientes</span>
                     </a>
-                </li>
+                </li> -->
 
                 <li class="sidebar-item" *ngIf="identity.role == 'ADMIN'" routerLinkActive="sidebar-item active">
                     <a class="sidebar-link" [routerLink]="['/usuarios']">

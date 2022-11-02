@@ -7,6 +7,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { DetalleVenta } from "../../../models/DetalleVenta";
 import { Venta } from "../../../models/Venta";
 import { VentaService } from 'src/app/services/venta.service';
+import { DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'app-venta-create',
@@ -24,7 +25,7 @@ export class VentaCreateComponent implements OnInit {
   public producto : any = {
     stock : '--|--',
   }
-  public total = 0;
+  public total : number = 0;
 
   public data_detalle : Array<any> = [];
   public detalle : any = {
@@ -100,7 +101,7 @@ export class VentaCreateComponent implements OnInit {
           console.log( this.total);
         }
         else{
-          this.error_message = 'No existe el suficiente stock para la venta';
+          this.error_message = 'Seleccione al menos un producto';
         }
     }else{
       console.log("error");

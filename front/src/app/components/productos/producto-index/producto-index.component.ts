@@ -24,6 +24,8 @@ export class ProductoIndexComponent implements OnInit {
   public producto_stock;
   public producto_id;
   public success_message;
+  public error_message;
+
   public p;
 
   constructor(
@@ -89,6 +91,7 @@ export class ProductoIndexComponent implements OnInit {
       );
       
     }
+    this.error_message = 'Complete correctamente el formulario';
   }
 
   eliminar(id){
@@ -144,6 +147,10 @@ export class ProductoIndexComponent implements OnInit {
   close_alert(){
     this.success_message = '';
   }
+
+  error_alert(){
+    this.error_message = ''; 
+   }
 
   aumentar_stock(stockForm){
     if(stockForm.valid){
